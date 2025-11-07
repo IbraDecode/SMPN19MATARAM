@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const quickLinks = [
   { href: '#profil-section', label: 'Profil Sekolah' },
@@ -39,11 +38,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-               <li>
-                  <Link to="/admin/login" className="text-sm text-text-secondary-light dark:text-text-secondary-dark hover:text-accent-dark transition-colors">
-                    Admin Login
-                  </Link>
-                </li>
             </ul>
           </div>
           <div>

@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink as RouterNavLink } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 interface NavLink {
   href: string;
@@ -41,8 +43,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState(() => document.documentElement.classList.contains('dark'));
-
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -55,25 +55,18 @@ export default function Header() {
     };
     document.addEventListener('mousedown', handleClickOutside);
 
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'auto';
     };
-  }, []);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  }, [isMenuOpen]);
   
   const closeAllMenus = () => {
     setIsMenuOpen(false);
@@ -88,7 +81,7 @@ export default function Header() {
             SMPN 19 Mataram
           </Link>
           
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <nav className="hidden md:block">
               <ul className="flex items-center space-x-2">
                 {navLinks.map(link => (
@@ -119,19 +112,9 @@ export default function Header() {
               </ul>
             </nav>
 
-            <button 
-              onClick={toggleTheme} 
-              aria-label="Toggle light/dark theme" 
-              className="ml-4 p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors"
-            >
-              {isDarkMode ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-              )}
-            </button>
+            <ThemeToggle />
 
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open menu" className="md:hidden ml-2 text-foreground-light dark:text-foreground-dark">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open menu" className="md:hidden text-foreground-light dark:text-foreground-dark">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} /></svg>
             </button>
           </div>
@@ -168,3 +151,4 @@ export default function Header() {
     </header>
   );
 }
+      

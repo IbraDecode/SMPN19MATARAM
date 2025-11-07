@@ -32,20 +32,18 @@ export default function TeachersPage() {
 
     if (isLoading) {
         return (
-            <div className="pt-20">
-                <div className="py-24 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-extrabold gradient-text">Guru & Staf Pengajar</h2>
-                            <p className="mt-4 text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">
-                                Memuat data para pendidik berdedikasi...
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {Array.from({ length: 6 }).map((_, index) => (
-                                <TeacherCardShimmer key={index} />
-                            ))}
-                        </div>
+            <div className="py-24 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-extrabold gradient-text">Guru & Staf Pengajar</h2>
+                        <p className="mt-4 text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">
+                            Memuat data para pendidik berdedikasi...
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {Array.from({ length: 6 }).map((_, index) => (
+                            <TeacherCardShimmer key={index} />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -53,11 +51,9 @@ export default function TeachersPage() {
     }
 
     return (
-        <div className="pt-20">
-            <TeachersSection 
-                teachers={teachers} 
-                onAskSira={() => handleOpenChat('Tolong berikan informasi tentang guru-guru di SMPN 19 Mataram.')}
-            />
-        </div>
+        <TeachersSection 
+            teachers={teachers} 
+            onAskSira={() => handleOpenChat('Tolong berikan informasi tentang guru-guru di SMPN 19 Mataram.')}
+        />
     );
 }

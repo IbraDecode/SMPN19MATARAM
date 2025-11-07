@@ -124,11 +124,15 @@
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
+      #aurora-background {
+        background: radial-gradient(ellipse at top, #e0f2fe 0%, #f0f4f9 50%),
+                    radial-gradient(ellipse at bottom, #dbeafe 0%, #f0f4f9 50%);
+        background-size: 200% 200%;
+        animation: aurora 60s infinite linear;
+      }
       .dark #aurora-background {
         background: radial-gradient(ellipse at top, #0c4a6e 0%, #020418 50%),
                     radial-gradient(ellipse at bottom, #075985 0%, #020418 50%);
-        background-size: 200% 200%;
-        animation: aurora 60s infinite linear;
       }
 
       .glass-card {
@@ -203,10 +207,7 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react-router-dom": "https://aistudiocdn.com/react-router-dom@^6.25.1",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "firebase/app": "https://aistudiocdn.com/firebase@^10.12.3/app",
-    "firebase/auth": "https://aistudiocdn.com/firebase@^10.12.3/auth",
-    "firebase/": "https://aistudiocdn.com/firebase@^10.12.3/"
+    "react": "https://aistudiocdn.com/react@^19.2.0"
   }
 }
 </script>
