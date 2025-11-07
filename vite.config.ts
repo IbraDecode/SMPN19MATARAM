@@ -19,10 +19,6 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      build: {
-        rollupOptions: {
-          external: ['react', 'react-dom', 'react-router-dom', '@google/genai']
-        }
-      }
+
     };
   });
