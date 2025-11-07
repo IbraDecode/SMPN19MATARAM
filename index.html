@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="https://smpn19mtr.web.id/images/smpn19-logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Optimization -->
+    <title>SMP Negeri 19 Mataram - Sekolah Berprestasi dan Inovatif di NTB</title>
+    <meta name="description" content="Website resmi SMP Negeri 19 Mataram. Menyajikan informasi terbaru tentang profil sekolah, kegiatan belajar mengajar, prestasi siswa, dan fasilitas pendidikan di Nusa Tenggara Barat." />
+    <meta name="keywords" content="SMPN 19 Mataram, Sekolah Negeri Mataram, Pendidikan NTB, SMP Negeri di Lombok, Sekolah Berprestasi, SMPN19" />
+    <meta name="author" content="SMPN 19 Mataram — Created by Ibra Decode" />
+    <link rel="canonical" href="https://smpn19mtr.web.id/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smpn19mtr.web.id/" />
+    <meta property="og:title" content="SMP Negeri 19 Mataram - Sekolah Berprestasi dan Inovatif di NTB" />
+    <meta property="og:description" content="Website resmi SMP Negeri 19 Mataram. Menyajikan informasi terbaru tentang profil sekolah, kegiatan belajar mengajar, prestasi siswa, dan fasilitas pendidikan di Nusa Tenggara Barat." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://smpn19mtr.web.id/" />
+    <meta property="twitter:title" content="SMP Negeri 19 Mataram - Sekolah Berprestasi dan Inovatif di NTB" />
+    <meta property="twitter:description" content="Website resmi SMP Negeri 19 Mataram. Menyajikan informasi terbaru tentang profil sekolah, kegiatan belajar mengajar, prestasi siswa, dan fasilitas pendidikan di Nusa Tenggara Barat." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "SMP Negeri 19 Mataram",
+      "url": "https://smpn19mtr.web.id/",
+      "logo": "https://smpn19mtr.web.id/images/smpn19-logo.jpg",
+      "description": "Website resmi SMP Negeri 19 Mataram. Menyajikan informasi terbaru tentang profil sekolah, kegiatan belajar mengajar, prestasi siswa, dan fasilitas pendidikan di Nusa Tenggara Barat.",
+      "telephone": "+62-370-612345",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Pendidikan No. 19, Dasan Agung",
+        "addressLocality": "Mataram",
+        "addressRegion": "Nusa Tenggara Barat",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://www.instagram.com/smpn19mataram_official",
+        "https://www.youtube.com/@smpn19mataramofficial",
+        "https://www.facebook.com/smpn19mataramofficial"
+      ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (function() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              // Light Theme
+              'background-light': '#f0f4f9', // Lighter, cooler gray
+              'foreground-light': '#0f172a', // slate-900
+              'card-light': 'rgba(255, 255, 255, 0.6)',
+              'text-secondary-light': '#475569', // slate-600
+              'border-light': 'rgba(0, 0, 0, 0.08)',
+              
+              // Dark Theme (New Blue Palette)
+              'background-dark': '#020418', // Midnight Blue
+              'foreground-dark': '#e2e8f0', // slate-200
+              'card-dark': 'rgba(10, 25, 47, 0.6)', // Dark blue with alpha
+              'text-secondary-dark': '#94a3b8', // slate-400
+              'border-dark': 'rgba(255, 255, 255, 0.15)',
+
+              'accent': {
+                'light': '#0EA5E9', // sky-500
+                'dark': '#38BDF8'  // sky-400
+              },
+            },
+            borderRadius: {
+              '3xl': '1.5rem',
+              '4xl': '2rem',
+            },
+            boxShadow: {
+              'accent-glow-light': '0 0 25px rgba(14, 165, 233, 0.4)',
+              'accent-glow-dark': '0 0 25px rgba(56, 189, 248, 0.3)',
+            },
+            animation: {
+              'aurora': 'aurora 60s infinite linear',
+              'shimmer': 'shimmer 1.5s infinite linear',
+            },
+            keyframes: {
+              aurora: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        @apply bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark transition-colors duration-500;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+      .dark #aurora-background {
+        background: radial-gradient(ellipse at top, #0c4a6e 0%, #020418 50%),
+                    radial-gradient(ellipse at bottom, #075985 0%, #020418 50%);
+        background-size: 200% 200%;
+        animation: aurora 60s infinite linear;
+      }
+
+      .glass-card {
+        @apply bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: background-color 0.5s, border-color 0.5s;
+      }
+      .btn-glow {
+        @apply shadow-accent-glow-light dark:shadow-accent-glow-dark;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-glow:hover {
+         box-shadow: 0 0 10px theme('colors.accent.light'), 0 0 25px theme('colors.accent.light'), 0 0 50px theme('colors.accent.light');
+      }
+      .dark .btn-glow:hover {
+         box-shadow: 0 0 10px theme('colors.accent.dark'), 0 0 25px theme('colors.accent.dark'), 0 0 50px theme('colors.accent.dark');
+      }
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .scroll-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .timeline-item {
+        opacity: 0;
+        transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+      }
+      .timeline-item.timeline-left { transform: translateX(-50px); }
+      .timeline-item.timeline-right { transform: translateX(50px); }
+      .timeline-item.visible { opacity: 1; transform: translateX(0); }
+      
+      .contact-input {
+        background-color: rgba(15, 23, 42, 0.05);
+        @apply border border-border-light dark:border-border-dark;
+        transition: all 0.3s ease-in-out;
+      }
+      .dark .contact-input {
+         background-color: rgba(241, 245, 249, 0.05);
+      }
+      .contact-input:focus {
+        @apply border-accent-light dark:border-accent-dark;
+        background-color: rgba(15, 23, 42, 0.02);
+        box-shadow: 0 0 10px theme('colors.accent.light / 50%');
+      }
+      .dark .contact-input:focus {
+        background-color: rgba(241, 245, 249, 0.05);
+        box-shadow: 0 0 10px theme('colors.accent.dark / 50%');
+      }
+      .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-br from-sky-600 to-cyan-500;
+      }
+      .dark .gradient-text {
+        @apply from-white to-sky-400;
+        text-shadow: 0 0 15px theme('colors.accent.dark / 50%');
+      }
+      .btn-gradient {
+        @apply bg-gradient-to-r from-sky-600 to-cyan-500 text-white;
+      }
+      .dark .btn-gradient {
+        @apply bg-gradient-to-r from-sky-400 to-cyan-300 text-slate-900;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^6.25.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "firebase/app": "https://aistudiocdn.com/firebase@^10.12.3/app",
+    "firebase/auth": "https://aistudiocdn.com/firebase@^10.12.3/auth",
+    "firebase/": "https://aistudiocdn.com/firebase@^10.12.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
